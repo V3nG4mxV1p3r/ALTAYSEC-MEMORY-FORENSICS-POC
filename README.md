@@ -66,3 +66,23 @@ docker-compose up -d --build
 * `./submit` çalıştır ve Flag'i kap.
 
 ---
+
+## 🔴 Level 3: Bellek Enjeksiyonu ve Parola Hırsızlığı (Zor)
+
+**Odak Noktası:** Bellek İçi Enjeksiyon (Process Injection), Mimikatz & Parola Hırsızlığı, Kötü Amaçlı Kod Analizi.
+
+## 📝 Senaryo:
+Saldırganın izlerini sürerken sistemde çok daha tehlikeli bir durum tespit edildi. Gelişmiş bir zararlı yazılım, tespit edilmekten kaçınmak için kendi kodunu meşru bir Windows sistem dosyasının içine enjekte etmiş (Process Injection) ve sistemin RAM'inden yönetici parolalarının özetlerini (Hash) çalmış.
+
+## 🎯 Görevler:
+* `vol` aracını (`./vol -f suspect.raw plugin_adi`) kullanarak bellek imajını analiz et.
+  
+* Bellek enjeksiyonu (Process Injection) yapılmış meşru Windows sürecinin adını (`windows.malfind`) bul.
+  
+* Enjekte edilen bellek bölgesindeki (Memory Section) koruma yetkisini (`Protection`) tespit et.
+
+* Saldırganın RAM'den çaldığı Administrator kullanıcısına ait NTLM Hash değerini (`windows.hashdump`) bul.
+  
+* `./submit` çalıştır ve Final Flag'i kap.
+
+*Developed by Emir - Information Security Specialist / Blue Team Lab Researcher*
