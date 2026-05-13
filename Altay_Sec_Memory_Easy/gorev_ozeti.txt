@@ -11,8 +11,10 @@ Bu laboratuvarda Volatility 3 aracı './vol' komutu ile kullanıma hazırdır.
 Görevleriniz:
 1. İmajı alınan makinenin işletim sistemi versiyonu nedir? 
    (İpucu: './vol -f suspect.raw windows.info' komutunu kullanın)
+
 2. Sistemde yetkisiz olarak çalışan şüpheli uygulamanın adı nedir? 
    (İpucu: './vol -f suspect.raw windows.pslist' komutunu kullanın)
+
 3. Bu şüpheli uygulamanın PID (Process ID) değeri nedir?
 
 Cevapları bulduğunuzda terminale './submit' yazarak bayrağı (FLAG) kapın!
