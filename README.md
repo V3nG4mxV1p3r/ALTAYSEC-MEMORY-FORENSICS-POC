@@ -46,3 +46,23 @@ docker-compose up -d --build
 * `./submit` çalıştır ve Flag'i kap.
 
 ---
+
+## 🟡 Level 2: Ağ Analizi ve Gizli Süreçler (Orta)
+**Odak Noktası:** Gizlenmiş Süreçler (Unlinked Processes), Ağ Bağlantıları, Ebeveyn-Çocuk Süreç İlişkileri (Parent-Child Process Tree).
+
+## 📝 Senaryo:
+İlk incelemede şüpheli bir uygulamanın çalıştığını tespit etmiştik. Ancak yeni bulgular, saldırganın ana zararlı yazılımını Görev Yöneticisinden (`pslist`) gizlediğini ve dışarıdaki bir Komuta Kontrol (C2) sunucusuyla haberleştiğini gösteriyor.
+
+## 🎯 Görevler:
+
+`vol` aracını (`./vol -f suspect.raw plugin_adi`) kullanarak bellek imajını analiz et.
+
+* Zararlı yazılımın dışarıya bağlandığı C2 sunucusunun IP adresini bul (`windows.netstat`).
+
+* Kendini standart görev listesinden gizlemiş gizli zararlı sürecin adını tespit et (`windows.psxview`).
+
+* Bu gizli zararlıyı başlatan ana sürecin (`PPID`) numarasını bul (`windows.pstree`).
+
+* `./submit` çalıştır ve Flag'i kap.
+
+---
